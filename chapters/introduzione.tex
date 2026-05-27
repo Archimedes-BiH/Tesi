@@ -1,44 +1,42 @@
 \chapter{Introduzione}
 \label{cap:introduzione}
 
-Introduzione al contesto applicativo.\\
+\section{Il contesto}
 
-\noindent Esempio di utilizzo di un termine nel glossario \\
-\gls{api}. \\
-
-\noindent Esempio di citazione in linea \\
-\cite{site:agile-manifesto}. \\
-
-\noindent Esempio di citazione nel pie' di pagina \\
-citazione\footcite{womak:lean-thinking} \\
-
+Il controllo di documenti aziendali è un processo laborioso e stancante. 
+La verifica di ogni sezione del documento rispetto alla struttura e alle normative aziendali può essere un compito arduo, soprattutto per documenti di grandi dimensioni.
+Per questo motivo, è nata l'idea di creare una piattaforma che faccia tutti questi controlli automaticamente tramite un modello AI esterno. 
+Il modello, a sua volta, andrà ad effettuare controlli di qualità del documento e ritorerà una risposta strutturata in formato JSON al backend del sistema. La risposta è strutturata nel seguente modo:
+\begin{itemize}
+    \item Nome della sezione in cui si è verificato il problema
+    \item I problemi rilevati e la soluzione proposta
+    \item La gravità del problema
+    \item La lista di sezioni che mancano
+\end{itemize}
+Grazie a queste informazioni, viene costruito un report dell'analisi che viene visualizzato nella dashboard e che può essere scaricato come file JSON oppure come PDF. Il progetto è stato proposto dall'azienda all'evento StageIT 2026.
 \section{L'azienda}
 
-Descrizione dell'azienda.
+Lo stage è stato svolto presso Var Group in Via Salboro 22, società operante nel settore dei servizi e delle soluzioni digitali fondata nel 1973 con sede legale ad Empoli.
+L'azienda offre competenze in ambiti quali cloud computing, cybersecurity, data science, sviluppo software, intelligenza artificiale e trasformazione digitale, supportando organizzazioni pubbliche e private nell'innovazione dei propri processi tecnologici. \\
 
-\section{L'idea}
 
-Introduzione all'idea dello stage.
+\section{Scelta dello stage}
 
-\section{Organizzazione del testo}
+Ho scelto questo progetto con l'obiettivo di approfondire le mie conoscenze nell'ambito dell'intelligenza artificiale.
+La crescente diffusione dell'intelligenza artificiale ha rappresentato una delle principali motivazioni alla base della scelta di questo stage,
+ offrendo l'opportunità di approfondire le potenzialità di tali tecnologie e comprenderne le applicazioni nello sviluppo di prodotti software.
+\section{Organizzazione del documento}
 
-\begin{description}
-    \item[{\hyperref[cap:processi-metodologie]{Il secondo capitolo}}] descrive ...
-    
-    \item[{\hyperref[cap:descrizione-stage]{Il terzo capitolo}}] approfondisce ...
-    
-    \item[{\hyperref[cap:analisi-requisiti]{Il quarto capitolo}}] approfondisce ...
-    
-    \item[{\hyperref[cap:progettazione-codifica]{Il quinto capitolo}}] approfondisce ...
-    
-    \item[{\hyperref[cap:verifica-validazione]{Il sesto capitolo}}] approfondisce ...
-    
-    \item[{\hyperref[cap:conclusioni]{Nel settimo capitolo}}] descrive ...
-\end{description}
-
-Riguardo la stesura del testo, relativamente al documento sono state adottate le seguenti convenzioni tipografiche:
+Il documento è diviso in 7 capitoli, ognuno tratta una parte diversa del sistema e dell'esperienza dello stage.
+La suddivisione avviene così:
 \begin{itemize}
-	\item gli acronimi, le abbreviazioni e i termini ambigui o di uso non comune menzionati vengono definiti nel glossario, situato alla fine del presente documento;
-	\item per la prima occorrenza dei termini riportati nel glossario viene utilizzata la seguente nomenclatura: \emph{parola}\glsfirstoccur;
-	\item i termini in lingua straniera o facenti parti del gergo tecnico sono evidenziati con il carattere \emph{corsivo}.
+    \item Capitolo 1: introduzione del contenuto
+    \item Capitolo 2: descrizione più profonda delle attività svolte durante lo stage
+    \item Capitolo 3: descizione delle tecnologie utilizzate per realizzare il progetto
+    \item Capitolo 4: descrizione delle scelte progettuali e architetturali
+    \item Capitolo 5: descrizione della migrazione del sistema verso AWS cloud
+    \item Capitolo 6: descrizione del processo di testing
+    \item Capitolo 7: conclusione e valutazione personale dell'esperienza 
 \end{itemize}
+
+

@@ -49,7 +49,9 @@
 \makeglossaries
 
 \bibliography{appendix/bibliography}
-
+\newcommand{\usecaseincl}[1]{\textbf{Include:} #1}
+\newcommand{\usecasegen}[1]{\textbf{Generalizza:} #1}
+\newcommand{\usecasesecondactors}[1]{\textbf{Secondary actors:} #1}
 \defbibheading{bibliography} {
     \cleardoublepage
     \phantomsection
@@ -179,6 +181,11 @@
 
 \newcommand{\usecasename}{UC}
 
+
+% Elementi descrittivi aggiuntivi per il blocco usecase
+\newcommand{\usecasetrig}[1]{\textbf{\\Trigger:} #1. \vspace{4pt}}
+\newcommand{\usecaseprin}[1]{\textbf{\\Scenario Principale:} #1 \vspace{4pt}}
+\newcommand{\usecaseext}[1]{\textbf{\\Estensioni:} #1. \vspace{4pt}}
 \newcommand{\usecaseactors}[1]{\textbf{\\Attori Principali:} #1. \vspace{4pt}}
 \newcommand{\usecasepre}[1]{\textbf{\\Precondizioni:} #1. \vspace{4pt}}
 \newcommand{\usecasedesc}[1]{\textbf{\\Descrizione:} #1. \vspace{4pt}}

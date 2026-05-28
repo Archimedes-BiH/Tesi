@@ -1,6 +1,20 @@
 {
-    "latex-workshop.latex.external.build.command": "latexmk"
-    "latex-workshop.latex.external.build.args": [
-        "thesis.tex"
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "latexmk",
+            "tools": ["latexmk"]
+        }
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-pdf",
+                "-interaction=nonstopmode",
+                "-synctex=1",
+                "%DOC%"
+            ]
+        }
     ]
 }

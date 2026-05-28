@@ -1,21 +1,54 @@
-% Acronyms
-\newacronym[description={\glslink{apig}{Application Program Interface}}]
-    {api}{API}{Application Program Interface}
+% --- ACROSTICI (Senza rimandi ricorsivi nel name) ---
+\newacronym{api}{API}{Application Program Interface}
+\newacronym{uml}{UML}{Unified Modeling Language}
+\newacronym{ai}{AI}{Artificial Intelligence}
 
-\newacronym[description={\glslink{umlg}{Unified Modeling Language}}]
-    {uml}{UML}{Unified Modeling Language}
-
-% Glossary entries
+% --- VOCI DI GLOSSARIO (Senza \glslink ricorsivi all'interno di 'name') ---
 \newglossaryentry{apig} {
-    name=\glslink{api}{API},
-    text=Application Program Interface,
-    sort=api,
-    description={in informatica con il termine \emph{Application Programming Interface API} (ing. interfaccia di programmazione di un'applicazione) si indica ogni insieme di procedure disponibili al programmatore, di solito raggruppate a formare un set di strumenti specifici per l'espletamento di un determinato compito all'interno di un certo programma. La finalità è ottenere un'astrazione, di solito tra l'hardware e il programmatore o tra software a basso e quello ad alto livello semplificando così il lavoro di programmazione}
+    name={API (Application Program Interface)},
+    text={Application Program Interface},
+    sort={api},
+    description={In informatica con il termine \emph{Application Programming Interface} si indica ogni insieme di procedure disponibili al programmatore, di solito raggruppate a formare un set di strumenti specifici per l'espletamento di un determinato compito all'interno di un certo programma. La finalità è ottenere un'astrazione, di solito tra l'hardware e il programmatore o tra software a basso e quello ad alto livello semplificando così il lavoro di programmazione.}
 }
 
 \newglossaryentry{umlg} {
-    name=\glslink{uml}{UML},
-    text=UML,
-    sort=uml,
-    description={in ingegneria del software \emph{UML, Unified Modeling Language} (ing. linguaggio di modellazione unificato) è un linguaggio di modellazione e specifica basato sul paradigma object-oriented. L'\emph{UML} svolge un'importantissima funzione di ``lingua franca'' nella comunità della progettazione e programmazione a oggetti. Gran parte della letteratura di settore usa tale linguaggio per descrivere soluzioni analitiche e progettuali in modo sintetico e comprensibile a un vasto pubblico}
+    name={UML (Unified Modeling Language)},
+    text={UML},
+    sort={uml},
+    description={In ingegneria del software \emph{UML, Unified Modeling Language} (ing. linguaggio di modellazione unificato) è un linguaggio di modellazione e specifica basato sul paradigma object-oriented. L'\emph{UML} svolge un'importantissima funzione di ``lingua franca'' nella comunità della progettazione e programmazione a oggetti. Gran parte della letteratura di settore usa tale linguaggio per descrivere soluzioni analitiche e progettuali in modo sintetico e comprensibile a un vasto pubblico.}
+}
+
+\newglossaryentry{monorepog} {
+    name={Monorepo},
+    text={monorepo},
+    sort={monorepo},
+    description={Strategia di gestione del codice in cui più progetti o componenti software vengono conservati all'interno di un unico repository Git. In pratica, invece di avere repository separati per backend, frontend, librerie o servizi diversi, tutto il codice viene mantenuto in un'unica base di codice condivisa.}
+}
+
+\newglossaryentry{githubg} {
+    name={GitHub},
+    text={GitHub},
+    sort={github},
+    description={Piattaforma di sviluppo collaborativo basata su Git che consente l'hosting e la gestione di repository di codice sorgente, facilitando il versionamento, la collaborazione tra sviluppatori e l'automazione dei processi di sviluppo software.}
+}
+
+\newglossaryentry{boilerplateg} {
+    name={Boilerplate},
+    text={boilerplate},
+    sort={boilerplate},
+    description={Insieme di codice, configurazioni e strutture di progetto già predisposte, riutilizzabili come base iniziale per lo sviluppo di un'applicazione software.}
+}
+
+\newglossaryentry{rulebasedg}{
+    name={Rulebased},
+    text={rulebased},
+    sort={rulebased},
+    description={Approccio di analisi basato su regole deterministiche predefinite.}
+}
+
+\newglossaryentry{dockerg}{
+    name={Docker},
+    text={docker},
+    sort={docker},
+    description={piattaforma open source che permette di creare, distribuire ed eseguire applicazioni all'interno di ambienti isolati chiamati container. I container racchiudono in un unico "pacchetto" tutto il necessario per far funzionare un programma: codice, librerie, dipendenze e configurazioni.}
 }

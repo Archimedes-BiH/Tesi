@@ -1,6 +1,56 @@
-\chapter{Processi e metodologie}
-\label{cap:processi-metodologie}
+\chapter{Descrizione dello stage}
+\label{cap:descrizione-stage}
 
-\intro{Brevissima introduzione al capitolo}\\
+\intro{Questa sezione è dedicata alla descrizione dell'esperienza di stage, con una visione dettagliata sulle attività previste, i rischi e i requisiti richiesti.}\\
 
-\section{Processo sviluppo prodotto}
+\section{Il progetto AI Consistency Platform}
+Il progetto, denominato AI Consistency Platform, consiste nello sviluppo di un'applicazione web che integra il modello di intelligenza artificiale Claude Sonnet di Anthropic per la verifica della conformità documentale rispetto a policy aziendali e requisiti normativi. \\
+L'idea del progetto nasce dalla necessità di automatizzare e velocizzare il processo di verifica documentale, un processo lungo e soggetto a errori umani.
+Il flusso dell'applicazione ha origine dall'interfaccia utente, attraverso la quale un utente registrato può accedere alla propria dashboard personale. \\
+Dalla dashboard è possibile avviare una nuova analisi caricando un documento in formato PDF, MD o DOCX e scegliendo la tipologia del documento caricato. Sono stati implementati 5 template diversi, progettati per coprire diverse parti delle aree di documentazione aziendale. 
+Il documento viene elaborato da un parser che analizza il documento ed estrae tutto il testo e le eventuali tabelle presenti. Le informazioni estratte vengono inoltrate al modulo AI, il quale genera un prompt destinato a Claude Sonnet. \\
+Il modello, grazie a una fase intensa di prompt engineering, ritorna un report strutturato in cui si trovano tutte le informazioni che riguardano le sezioni del documento, incluse eventuali non confirmità rilevate.
+Infine, l'utente ha la possibilità di scaricare il report in formato PDF oppure JSON, e il file originale viene salvato nel database in caso l'utente volesse riscaricarlo nel futuro. 
+
+\section{Gli obiettivi}
+Siccome il progetto è stato assegnato a due persone, ognuno dei membri aveva obiettivi diversi. I miei obiettivi sono stati:
+\begin{itemize}
+    \item Implementare il modulo AI per la verifica della conformità rispetto a policy interne e requisiti normativi
+    \item Sviluppare il generatore automatico di report strutturati di qualità documentale
+    \item Progettare e implementare la migrazione del sistema verso AWS private cloud
+    \item Validare il sistema garantendo la continuità del servizio durante la transizione cloud
+\end{itemize}
+Mentre invece, gli obiettivi comuni erano la progettazione del sistema e dell'architettura, l'analisi dei requisiti e la creazione delle API.
+
+\section{Il way of working}
+Il progetto è stato sviluppato seguendo una modalità di lavoro collaborativa tra i due membri del team. Le attività sono state organizzate in modo iterativo, con cicli di sviluppo progressivi che includevano analisi, progettazione, implementazione, test e revisione delle funzionalità.\\
+\subsection{Comunicazione e versionamento}
+La comunicazione tra i membri del team è stata continua e supportata da strumenti di versionamento del codice e tracciamento delle attività. \\
+Il versionamento del codice è stato gestito attraverso una \gls{monorepog} su \gls{githubg}, basata su un \gls{boilerplateg} aziendale già predisposto. 
+\section{Valutazione dei rischi}
+La seguente tabella indica tutti i rischi che sono stati individuati prima di iniziare la fase di sviluppo:
+
+\begin{table}[h]
+    \caption{Tabella dei rischi individuati}
+\label{tab:rischi}
+\begin{tabularx}{\textwidth}{XllX}
+\hline\hline
+\textbf{Rischio} & \textbf{Probabilità} & \textbf{Impatto} & \textbf{Mitigazione} \\
+\hline
+Analisi Large Language \newline Model incompleta \newline (falsi negativi)  & Alta  & Alto  & Suddivisione del \newline documento in sezioni per \newline l'analisi, anziché l'invio \newline dell' intero testo \\
+\hline
+Analisi Large Language \newline Model imprecisa (falsi \newline positivi) & Media & Medio & Prompt strutturati con \newline istruzioni esplicite sulla \newline soglia di segnalazione \\
+\hline
+Finestra di contesto \newline insufficiente per documenti di grandi dimensioni & Media & Alto & Suddivisione del documento in sezioni prima dell'invio al modello \\
+\hline
+Risposte del modello verbose o poco precise & Media & Medio & Limitazione della lunghezza massima della risposta per singola sezione \\
+\hline
+Imprecisione del quality \newline score nella valutazione \newline complessiva del documento & Media & Medio & Classificazione degli errori in tre livelli di gravità \newline (Bassa, Media e Grave) con pesi distinti nel calcolo dello score\\
+\hline
+Eterogeneità dei formati \newline documentali & Media & Medio & Utilizzo di librerie per ogni formato (PDF, Word, Markdown) \\
+\hline
+Indisponibilità o costo \newline elevato delle API Anthropic & Bassa & Alto & Limitare le chiamate alle API durante lo sviluppo \newline oppure impostare un limite massimo sui token \\
+\hline
+\end{tabularx}
+
+\end{table}
